@@ -20,7 +20,7 @@ public class Main extends ListenerAdapter {
     static void main(String[] args) throws InterruptedException {
         JDABuilder builder = JDABuilder.createDefault(System.getenv("DISCORD_TOKEN"))
                 .setActivity(Activity.customStatus("люблю джаву"))
-                .addEventListeners(new Main())
+                .addEventListeners(new Main(), new org.mexlogger.ButtonEvents.HelpButton())
                 .enableIntents(
                         GatewayIntent.MESSAGE_CONTENT,
                         GatewayIntent.GUILD_MEMBERS
