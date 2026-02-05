@@ -6,7 +6,7 @@
 
     <groupId>org.mexlogger</groupId>
     <artifactId>MEXLogger</artifactId>
-    <version>1.0.0</version>
+    <version>Alpha 1.0.1</version>
 
     <properties>
         <maven.compiler.source>25</maven.compiler.source>
