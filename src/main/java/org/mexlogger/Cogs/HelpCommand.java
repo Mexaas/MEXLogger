@@ -18,12 +18,14 @@ public class HelpCommand implements Command {
                 # :raccoon: Помощь по командам\n
                 - Пока-что ` пусто... `
                 """
-        ).addComponents(ActionRow.of(Button.danger(" ", "⏹️ Удалить")))
+        ).addComponents(ActionRow.of(Button.danger(" ", "⏹️ Удалить")), ActionRow.of(Button.secondary("  ", "⏹️ Заполнить")))
                 .queue(message -> {
-                    message.editMessageComponents(ActionRow.of(Button.danger(
-                            "helpCMD_button_delete:" + event.getAuthor().getId() + ":" + message.getId()
-                                    + ":" + event.getChannel().getId(), "⏹️ Удалить")
-                    )).queue();
+                    message.editMessageComponents(
+                            ActionRow.of(Button.danger(
+                            "DELETE_BUTTON_HELP:" + event.getAuthor().getId() + ":" + message.getId()
+                                    + ":" + event.getChannel().getId(), "⏹️ Удалить")),
+                            ActionRow.of(Button.secondary(
+                                    "MODAL_BUTTON_HELP:" + event.getAuthor().getId(), "⏹️ Заполнить"))).queue();
                     message.delete().queueAfter(20, TimeUnit.SECONDS);
                 });
 

@@ -10,6 +10,7 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 import org.mexlogger.Cogs.HelpCommand;
 import org.mexlogger.CommandManager.Command;
 import org.mexlogger.CommandManager.CommandManager;
+import org.mexlogger.ModalEvents.HelpModalInteraction;
 
 public class Main extends ListenerAdapter {
     private static JDA jda;
@@ -20,7 +21,8 @@ public class Main extends ListenerAdapter {
     static void main(String[] args) throws InterruptedException {
         JDABuilder builder = JDABuilder.createDefault(System.getenv("DISCORD_TOKEN"))
                 .setActivity(Activity.customStatus("люблю джаву"))
-                .addEventListeners(new Main(), new org.mexlogger.ButtonEvents.HelpButton())
+                .addEventListeners(new Main(), new org.mexlogger.ButtonEvents.HelpButton(),
+                new HelpModalInteraction())
                 .enableIntents(
                         GatewayIntent.MESSAGE_CONTENT,
                         GatewayIntent.GUILD_MEMBERS
