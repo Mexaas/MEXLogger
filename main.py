@@ -7,7 +7,7 @@ bot = commands.InteractionBot(intents=intents)
 
 @bot.event
 async def on_ready():
-    print(f"{bot.user} is starting")
+    print(f"|\n|{bot.user}\n|\n| Bot is starting\n|")
 
 bot.load_extension("Cogs.Captcha.captchaCommand")
 bot.run(os.getenv("DISCORD_TOKEN"))
