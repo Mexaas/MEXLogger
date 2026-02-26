@@ -96,7 +96,7 @@ class CaptchaCommand(commands.Cog):
         self.math = mathCaptcha
         self.quiz = quizCaptcha
 
-    @commands.slash_command(description="Отправьте в чат, чтобы пройти капчу", guild_ids=[1466509350100013226])
+    @commands.slash_command(description="Отправьте в чат, чтобы пройти капчу")
     async def captcha(
             self,
             body: disnake.ApplicationCommandInteraction,
