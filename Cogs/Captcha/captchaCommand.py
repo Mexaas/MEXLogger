@@ -116,7 +116,8 @@ class captcha_command(commands.Cog):
                 """
                 # :x: Ошибка
                 \n- Вы уже прошли капчу!
-                """
+                """,
+                ephemeral=True
             )
             return
         await body.response.send_message(
