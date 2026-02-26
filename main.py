@@ -7,7 +7,6 @@ bot = commands.InteractionBot(intents=intents)
 
 @bot.event
 async def on_ready():
-    # Stable in Windows 11 terminal
     print(
         f"""
         #######################
