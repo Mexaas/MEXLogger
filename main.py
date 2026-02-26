@@ -3,7 +3,10 @@ import disnake
 from disnake.ext import commands
 
 intents = disnake.Intents().all()
-bot = commands.InteractionBot(intents=intents)
+bot = commands.InteractionBot(
+    intents=intents,
+    activity=disnake.CustomActivity(name="🌺 весна близко")
+)
 
 @bot.event
 async def on_ready():
@@ -17,6 +20,7 @@ async def on_ready():
         #######################
         """
     )
+
 bot.load_extensions("Cogs/Captcha/")
 bot.load_extensions("Events/VerifyChannel/")
 bot.run(os.getenv("DISCORD_TOKEN"))
