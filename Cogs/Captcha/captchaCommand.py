@@ -90,7 +90,7 @@ class QuizCaptcha(disnake.ui.Modal):
             )
         return
 
-class captcha_command(commands.Cog):
+class CaptchaCommand(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         self.math = mathCaptcha
@@ -135,4 +135,4 @@ class captcha_command(commands.Cog):
         return [captcha_type for captcha_type in captcha_types if user_input.lower() in captcha_type.lower()[:25]]
 
 def setup(bot):
-    bot.add_cog(captcha_command(bot))
+    bot.add_cog(CaptchaCommand(bot))

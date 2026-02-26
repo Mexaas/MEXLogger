@@ -20,4 +20,5 @@ async def on_ready():
     )
 
 bot.load_extension("Cogs.Captcha.captchaCommand")
+bot.load_extension("Cogs.Captcha.verifyCommand")
 bot.run(os.getenv("DISCORD_TOKEN"))
