@@ -10,7 +10,6 @@ class VerificationCommand(commands.Cog):
         default_member_permissions=disnake.Permissions(
             administrator=True
         ),
-        guild_ids=[1466509350100013226]
     )
     async def verify(
             self,
