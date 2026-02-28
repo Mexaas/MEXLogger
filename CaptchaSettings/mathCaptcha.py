@@ -6,8 +6,7 @@ class mathCaptcha(CaptchaAbstract):
     operators = {
         '+': operator.add,
         '-': operator.sub,
-        '*': operator.mul,
-        'в степени': operator.pow
+        '*': operator.mul
     }
 
     async def captcha_create(self) -> tuple[str, int]:
