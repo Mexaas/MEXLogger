@@ -7,7 +7,7 @@ class defaultUserDataSetup(commands.Cog):
         self.bot = bot
     
     autosetup_channels = [1476554222874132491, 1476961225127628992, 1477014878102356028]
-    emojis = [1476966552858267699]
+    emojis = [1477235040084557848]
     @commands.Cog.listener()
     async def on_message(self, message):
         if message.author.bot: return
@@ -37,8 +37,7 @@ class defaultUserDataSetup(commands.Cog):
                         title="",
                         description=f"""
                                     # {self.bot.get_emoji(self.emojis[0])} Привет, {message.author.mention}!\n
-                                    - Добро пожаловать на {message.guild.name}`\n
-                                    
+                                    - Добро пожаловать на ` {message.guild.name} `
                                     > Похоже ты здесь впервые 🙂
                                     > используй ` /menu ` для полной навигации
                                     """,
@@ -47,7 +46,7 @@ class defaultUserDataSetup(commands.Cog):
                     embed.set_image(url="https://cdn.discordapp.com/attachments/1473895873074303229/1477338431091638574/5e39e8f9-9d93-4058-b603-226334216f9a.png?ex=69a46621&is=69a314a1&hm=07fc0b5eda344f5b60696dba2695e6f7cc0b3128603e4b53640bef9264a605f1&")
                     embed.set_footer(text="© 2026. Все права защищены")
                     await message.channel.send(delete_after=120, embed=embed)
-                    
+
                     return
 
     @commands.Cog.listener()
