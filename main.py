@@ -17,7 +17,7 @@ async def on_ready():
     bot.load_extensions("Cogs/Threads/")
     bot.load_extensions("Cogs/")
     bot.load_extensions("Events/VerifyChannel/")
-    bot.load_extensions("Events/SuggestionsChannel/")
+    bot.load_extensions("Events/AutoThreadEvent/")
     bot.load_extensions("Events/GeneralDataEvent/")
     await database.db.execute("PRAGMA journal_mode=WAL;")
     await database.db.commit()
