@@ -1,1 +1,2 @@
-disnake~=2.12.0
+disnake==2.12.0
+aiosqlite==0.22.1
