@@ -16,9 +16,10 @@ async def on_ready():
     bot.load_extensions("Cogs/Captcha/")
     bot.load_extensions("Cogs/Threads/")
     bot.load_extensions("Cogs/")
-    bot.load_extensions("Events/VerifyChannel/")
-    bot.load_extensions("Events/AutoThreadEvent/")
-    bot.load_extensions("Events/GeneralDataEvent/")
+    bot.load_extensions("Events/VerifyChannelEvents/")
+    bot.load_extensions("Events/AutoThreadEvents/")
+    bot.load_extensions("Events/MemberEvents/")
+    bot.load_extensions("Events/ParseEvents/")
     await database.db.execute("PRAGMA journal_mode=WAL;")
     await database.db.commit()
     print(
