@@ -8,7 +8,7 @@ class NewsParser(commands.Cog):
         self.bot = bot
         self.parser.start()
 
-    @tasks.loop(seconds=30)
+    @tasks.loop(hours=12)
     async def parser(self):
         async with aiohttp.ClientSession() as session:
             async with session.get("https://newsapi.org/v2/everything?q=AI OR programming OR software&language=ru&from=2026-02-07&sortBy=publishedAt&apiKey=8cbb420939284f91abd0df532509e90b") as response:
