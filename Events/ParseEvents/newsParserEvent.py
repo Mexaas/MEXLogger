@@ -19,7 +19,7 @@ class NewsParser(commands.Cog):
             description=
             f"# {self.bot.get_emoji(1477235040084557848)} Новостная лента\n"
             f"- {article["title"].capitalize()}\n"
-            f"> {article["description"]}\n"
+            f"> {article["description"]}\n" 
             f"\nСтатья: ||{article["url"]}||",
             color=0x7e57ff
         )

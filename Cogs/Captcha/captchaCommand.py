@@ -1,7 +1,7 @@
 import disnake
 from disnake.ext import commands
-from CaptchaSettings.mathCaptcha import mathCaptcha
-from CaptchaSettings.quizCaptcha import quizCaptcha
+from CaptchaTypes.mathCaptcha import mathCaptcha
+from CaptchaTypes.quizCaptcha import quizCaptcha
 
 class MathematicCaptcha(disnake.ui.Modal):
     def __init__(self, question: str, answer: int):
