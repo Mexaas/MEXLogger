@@ -63,7 +63,7 @@ class SelectMenu(disnake.ui.StringSelect):
                     f"> Github: ` Нет `\n"
                     f"- Статус: ` Нет `\n"
 
-                ), 
+                ),
                 file=self.get_image("profile"),
                 view=view,
                 ephemeral=True
@@ -73,7 +73,7 @@ class SelectMenu(disnake.ui.StringSelect):
         elif self.values[0].__contains__("rules"):
             view = DropDownSelect()
             await body.response.send_message(
-                f"## {await body.guild.fetch_emoji(self.emojis[0])} Правила сервера\n"
+                f"# {await body.guild.fetch_emoji(self.emojis[0])} Правила сервера\n"
                 f"- Уважайте ` пользователей ` сервера — ` оскорбления `, ` травля `, ` токсичность `, ` провокации `, ` дискриминация ` запрещены\n"
                 f">   Запрещается flood, caps, spam и реклама, кроме ` github.com ` или ` gitlab.com `\n"
                 f">   Запрещается ` любой обход ` правил или ограничений\n"
@@ -134,6 +134,6 @@ class MenuCommand(commands.Cog):
         )
         view.message = await body.original_message()
         return
-    
+
 def setup(bot):
     bot.add_cog(MenuCommand(bot))
