@@ -18,13 +18,13 @@ class NewsParser(commands.Cog):
             title="",
             description=
             f"# {self.bot.get_emoji(1477235040084557848)} Новостная лента\n"
-            f"- {article["title"].capitalize()}\n"
-            f"> {article["description"]}\n" 
-            f"\nСтатья: ||{article["url"]}||",
+            f"- {article['title'].capitalize()}\n"
+            f"> {article['description']}\n" 
+            f"\nСтатья: ||{article['url']}||",
             color=0x7e57ff
         )
-        image_url = article["urlToImage"]
-        embed.set_footer(text=f"{article["publishedAt"][:10]}")
+        image_url = article['urlToImage']
+        embed.set_footer(text=f"{article['publishedAt'][:10]}")
         embed.set_image(url=image_url) if image_url and image_url.startswith(("https://", "http://")) else None
 
         channel = self.bot.get_channel(1476962060092051547)
