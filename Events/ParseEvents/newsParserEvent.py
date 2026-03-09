@@ -6,13 +6,14 @@ import random
 class NewsParser(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+        self.client = aiohttp.ClientSession()
         self.parser.start()
 
-    @tasks.loop(hours=12)
+    @tasks.loop(seconds=30)
     async def parser(self):
-        async with aiohttp.ClientSession() as session:
-            async with session.get("https://newsapi.org/v2/everything?q=AI OR programming OR software&language=ru&from=2026-02-07&sortBy=publishedAt&apiKey=66e1fa12c72847cd9226a1f590efd367") as response:
-                data = await response.json()
+        async with self.session.get("https://newsapi.org/v2/everything?q=AI OR programming OR software&language=ru&from=2026-02-07&sortBy=publishedAt&apiKey=66e1fa12c72847cd9226a1f590efd367") as response:
+            data = await response.json()
+
         if "articles" not in data or not data['articles']:
             return
         article = random.choice(data['articles'])
